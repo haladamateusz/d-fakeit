@@ -1,0 +1,7 @@
+data/
+models/
+**/*MACOSX/
+**/.DS_Store
+**/*.pyc
+**/*.pyo
+**/__pycache__/
