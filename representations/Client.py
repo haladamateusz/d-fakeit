@@ -1,21 +1,26 @@
 import os
 import sys
 from modelling.generate_transcripts import generate_transcripts_from_audio
-
+import pickle
 
 class Client:
-    def __init__(self, client_id, client_info, embeddings=None):
+    def __init__(self, client_name, client_info=None, embeddings=None):
         '''
             Populate the client information
         '''
-        self.client_id = client_id
+        self.client_name = client_name
         self.client_info = client_info  # Information about the client
-        self.embeddings = None  # List to store embeddings
-        self.transcript = None
+        self.audio_files = []
+        self.embeddings = []  # List to store embeddings
+        self.transcript = []
 
-    def populate_client_info(self, file_path):
+    def cache_self(self):
+        with open(f"data/cached_clients/{self.client_name}.pkl", "wb") as f:
+            pickle.dump(self, f)
+
+    def populate_client_info(self, info):
         ## From the file_path, parse the different attributes of the client and populate the client_info
-        self.client_info = None
+        self.client_info = info
 
     def generate_transcripts_from_audio_file(self, audio_file_name):
         ### TODO: Read the transcript from the audio file. First check if the transcript is already present in the database; else generate it
