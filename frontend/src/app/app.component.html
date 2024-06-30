@@ -23,7 +23,7 @@
                   class="mb-3 p-2 ms-3 mt-1 d-flex align-items-center justify-content-center rounded-4"
                 >
                   <img ngSrc="whereismybrainrn.svg" width="40" height="40" alt="" />
-                  <h5 class="ms-2 mb-0">Emotions: Neutral</h5>
+                  <h5 class="ms-2 mb-0">Emotions: Stress</h5>
                 </div>
               }
             </div>
@@ -56,7 +56,10 @@
           <div class="px-3 d-flex flex-row justify-content-between">
             <div class="d-inline-flex align-items-center">
               @if (deepFakeCheckStatus === 'unknown') {
-                <div class="spinner-border mb-1 spinner-border-sm text-secondary" role="status"></div>
+                <div
+                  class="spinner-border mb-1 spinner-border-sm text-secondary"
+                  role="status"
+                ></div>
               } @else if (deepFakeCheckStatus === 'valid') {
                 <img class="mb-2" ngSrc="checkmark.svg" width="30" height="30" alt="" />
               } @else if (deepFakeCheckStatus === 'invalid') {
@@ -87,7 +90,10 @@
 
             <div class="d-inline-flex align-items-center">
               @if (clientIndetificationCheckStatus === 'unknown') {
-                <div class="mb-2 spinner-border spinner-border-sm text-secondary" role="status"></div>
+                <div
+                  class="mb-2 spinner-border spinner-border-sm text-secondary"
+                  role="status"
+                ></div>
               } @else if (clientIndetificationCheckStatus === 'valid') {
                 <img class="mb-1" ngSrc="checkmark.svg" width="30" height="30" alt="" />
               } @else if (clientIndetificationCheckStatus === 'invalid') {
@@ -140,8 +146,8 @@
           @if (clientNameAuthenticated) {
             <div class="row">
               <div class="col-sm-5 ps-4">
-                <h4>Amina Kouri</h4>
-                <h5 class="text-secondary">Tech Startup Founder</h5>
+                <h4>{{ dataName.name }}</h4>
+                <h5 class="text-secondary">{{ dataName.profession }}</h5>
               </div>
               <div class="col-sm-1">
                 @if (dataName.validityStatus === 'valid') {
