@@ -24,68 +24,62 @@ export class AppComponent implements AfterViewInit {
   callDuration$: Observable<number> = timer(0, 1000);
 
   inputString =
-    "Good morning. I'm Amina Curri born on 23rd November 1991. Social Security Number seven five six one two three four" +
-    ' five six seven eight nine zero. (7561234567890) I need to withdraw a significant amount from my account in a small untraceable' +
-    ' demilination. Can you manage that today?';
-
-  importantData = {
-    name: 'Amina Curri',
-    dateOfBirth: '23rd November 1991',
-    ssn: '7561234567890'
-  };
+    'Hi, this is Isabella Rossi, managed by James Lee, account number Z R nine zero two three (ZR9023). I need to make sure no records' +
+    ' are kept' +
+    ' for my recent transactions.';
 
   dataName = {
-    name: 'Amina Curri',
-    profession: 'Tech Startup Founder',
+    name: 'Isabella Rossi',
+    profession: 'Art Dealer',
     validityStatus: 'unknown'
   };
 
   dataFields = [
     {
       name: 'Birthday',
-      value: '23rd November 1991',
+      value: '7th March 1978',
       validityStatus: 'unknown'
     },
     {
       name: 'Marital status',
-      value: 'Single',
+      value: 'Widowed',
       validityStatus: 'unknown'
     },
     {
       name: 'Account Number',
-      value: 'ZR1023',
+      value: 'ZR9023',
       validityStatus: 'unknown'
     },
     {
       name: 'Tax Residency',
-      value: ' USA',
+      value: ' Russia',
       validityStatus: 'unknown'
     },
     {
       name: 'Net worth in milions',
-      value: "$250M",
+      value: '$650M',
       validityStatus: 'unknown'
     },
     {
       name: 'Social Security Number',
-      value: '7561234567890',
+      value: '7566987517099',
       validityStatus: 'unknown'
     },
     {
       name: 'Relationship manager',
-      value: 'Ella Morrison',
+      value: 'James Lee',
       validityStatus: 'unknown'
     },
     {
       name: 'Education',
-      value: 'Bachelor of Science in Computer Science',
+      value: 'Ph.D. in Chemistry',
       validityStatus: 'unknown'
     }
   ];
 
   clientNameAuthenticated = false;
 
-  importantDataArray = ['Amina', 'Curri', '23rd', 'November', '1991.', '(7561234567890)'];
+  importantDataArray = ['Isabella', 'Rossi,', '(ZR9023).', 'James', 'Lee,'];
 
   emissions = 0;
 
@@ -103,8 +97,8 @@ export class AppComponent implements AfterViewInit {
 
   processingFinished = false;
 
-  textInput$ = interval(550).pipe(
-    delay(2000),
+  textInput$ = interval(700).pipe(
+    delay(2500),
     takeWhile(() => this.emissions < this.inputString.split(' ').length, true),
     switchMap((value: number) => {
       const correctInformations = this.dataFields.map(
@@ -120,11 +114,12 @@ export class AppComponent implements AfterViewInit {
         this.confidence += 20;
       }
       if (value === 12) {
-        this.impersonatorCheckStatus = 'valid';
-        this.confidence += 20;
+        this.impersonatorCheckStatus = 'invalid';
+        // this.confidence += 20;
       }
       if (value === 18) {
-        this.clientIndetificationCheckStatus = 'invalid';
+        this.clientIndetificationCheckStatus = 'valid';
+        this.confidence += 15;
       }
       if (this.emissions < this.inputString.split(' ').length) {
         this.isEmitting = true;
@@ -142,13 +137,13 @@ export class AppComponent implements AfterViewInit {
     const audio = document.getElementById('audio') as HTMLAudioElement;
 
     const audio2 = document.getElementById('audio2') as HTMLAudioElement;
-    audio2.src = '4USM1D1I1Q.wav';
+    audio2.src = 'fake.ogg';
     audio2.load();
     audio2.play();
 
     const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 
-    audio.src = '4USM1D1I1Q.wav';
+    audio.src = 'fake.ogg';
     audio.load();
     audio.play();
 
@@ -166,19 +161,19 @@ export class AppComponent implements AfterViewInit {
   }
 
   checkImportantData(word: string): boolean {
-    if (word === 'Security') {
+    if (word === 'number') {
       this.clientNameAuthenticated = true;
     }
     if (this.importantDataArray.includes(word)) {
-      if (word === '(7561234567890)') {
-        this.dataFields[5].validityStatus = 'valid';
+      if (word === '(ZR9023).') {
+        this.dataFields[2].validityStatus = 'valid';
       }
 
-      if (word === '1991.') {
-        this.dataFields[0].validityStatus = 'valid';
+      if (word === 'Lee,') {
+        this.dataFields[6].validityStatus = 'valid';
       }
-      if (word === 'Curri') {
-        this.dataName.validityStatus = 'invalid';
+      if (word === 'Rossi,') {
+        this.dataName.validityStatus = 'valid';
       }
       return true;
     }
