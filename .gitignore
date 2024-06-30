@@ -6,3 +6,7 @@ models/
 **/*.pyo
 **/__pycache__/
 venv/
+
+.idea/
+.vscode/
+node_modules/
