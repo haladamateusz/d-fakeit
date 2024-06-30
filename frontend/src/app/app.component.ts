@@ -29,13 +29,13 @@ export class AppComponent implements AfterViewInit {
     ' demilination. Can you manage that today?';
 
   importantData = {
-    name: 'Amina Curri',
+    name: 'Amina Kouri',
     dateOfBirth: '23rd November 1991',
     ssn: '7561234567890'
   };
 
   dataName = {
-    name: 'Amina Curri',
+    name: 'Amina Kouri',
     profession: 'Tech Startup Founder',
     validityStatus: 'unknown'
   };
