@@ -36,7 +36,7 @@ export class AppComponent implements AfterViewInit {
 
   dataName = {
     name: 'Amina Curri',
-    profession: 'Venture Capitalist',
+    profession: 'Tech Startup Founder',
     validityStatus: 'unknown'
   };
 
@@ -48,22 +48,22 @@ export class AppComponent implements AfterViewInit {
     },
     {
       name: 'Marital status',
-      value: 'Divorced',
+      value: 'Single',
       validityStatus: 'unknown'
     },
     {
       name: 'Account Number',
-      value: 'ZR4012',
+      value: 'ZR1023',
       validityStatus: 'unknown'
     },
     {
       name: 'Tax Residency',
-      value: ' Liechtenstein',
+      value: ' USA',
       validityStatus: 'unknown'
     },
     {
       name: 'Net worth in milions',
-      value: 2137,
+      value: "$250M",
       validityStatus: 'unknown'
     },
     {
@@ -73,12 +73,12 @@ export class AppComponent implements AfterViewInit {
     },
     {
       name: 'Relationship manager',
-      value: 'Morgan Stanley',
+      value: 'Ella Morrison',
       validityStatus: 'unknown'
     },
     {
       name: 'Education',
-      value: 'Bachelor of Computer Science',
+      value: 'Bachelor of Science in Computer Science',
       validityStatus: 'unknown'
     }
   ];
