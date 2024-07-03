@@ -1,5 +1,8 @@
 # d-fakeit (Using AI against Deepfakes Challenge)
 
+<img width="1482" alt="image" src="https://github.com/haladamateusz/d-fakeit/assets/26378632/ba054903-687d-4cca-86c1-a017c66d4d54">
+
+
 ## Team Members 
 
 
@@ -10,23 +13,4 @@ In this challenge, you will need to create solutions that can tell apart real an
 1. Identify deepfake client calls
 2. Verify the client's identity on the factual content of the call
 3. Differentiate between distinct human voices
-
-## Installation 
-
-Clone the repo :
- ```Shell
- git clone https://github.com/haladamateusz/d-fakeit.git
- ```
-
-Move to the tool's directory and install the tool:
- ```Shell
- cd d-fakeit
- pip install .
- ```
-Install dependencies:
-
-```Shell
-    
-```
-
 
