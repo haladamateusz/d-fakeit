@@ -58,3 +58,11 @@
 .line-height {
   line-height: 2;
 }
+
+.btn-person {
+  background: #314b95;
+  color: white;
+  &:hover {
+    background: #4a69c3;
+  }
+}
